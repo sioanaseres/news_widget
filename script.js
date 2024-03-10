@@ -1,4 +1,13 @@
-
+const data = {
+  "news": [
+      { "title": "First news", details: "This is a detailed description" },
+      { "title": "Second news", details: "Detailed text for this item" },
+      { "title": "Third news", details: "Another description goes here with something more" },
+      { "title": "Fourth news", details: "This is a detailed description" }, 
+      { "title": "Fifth news", details: "This is just a description" },
+      { "title": "Sixth news", details: "This is just another description" }
+  ]
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const dots = document.getElementsByClassName('dot');
@@ -14,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
      const fetchArticles = async () => {
       try {
-        const response = await fetch('https://run.mocky.io/v3/ed9c3f1d-f0af-46ce-999f-f342fb5423e2');
-        const data = await response.json();
+        // const response = await fetch('https://run.mocky.io/v3/ed9c3f1d-f0af-46ce-999f-f342fb5423e2');
+        // const data = await response.json();
         articles = [...data.news, ...data.news, ...data.news].slice(0, 15);
         
         populateArticles(articles.slice(0, 5));
